@@ -45,7 +45,7 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
           <div id="customer-error" aria-live="polite" aria-atomic="true">
             {state.errors?.customerId &&
               state.errors.customerId.map((error: string) => (
-                <p className="mt-2 text-sm text-red-500">{error}</p>
+                <p key={error} className="mt-2 text-sm text-red-500">{error}</p>
               ))}
           </div>
         </div>
