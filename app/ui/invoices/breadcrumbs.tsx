@@ -20,10 +20,10 @@ export default function Breadcrumbs({
           <li
             key={breadcrumb.href}
             aria-current={breadcrumb.active}
-            className={clsx(
+            className={clsx( 
               breadcrumb.active ? 'text-gray-900' : 'text-gray-500',
-            )}
-          >
+            )} 
+          > {/* <-Not a fan of clsx, sure it's comfortable but leftPad man... */}
             <Link href={breadcrumb.href}>{breadcrumb.label}</Link>
             {index < breadcrumbs.length - 1 ? (
               <span className="mx-3 inline-block">/</span>

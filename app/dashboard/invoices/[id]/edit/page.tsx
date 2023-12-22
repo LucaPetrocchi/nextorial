@@ -13,10 +13,10 @@ export default async function Page({ params }: { params: { id: string } }) {
   const [invoice, customers] = await Promise.all([
     fetchInvoiceById(id),
     fetchCustomers(),
-  ]);
+  ]); {/* <- Promise.all starts all fetches at the same time */}
 
   if (!invoice) {
-    notFound();
+    notFound(); {/* searches for nearest not-found.tsx */}
   }
 
   return (

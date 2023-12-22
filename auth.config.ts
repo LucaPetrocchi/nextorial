@@ -1,5 +1,7 @@
 import type { NextAuthConfig } from "next-auth";
 
+// behavior of app depending on login status
+
 export const authConfig = {
     pages: {
         signIn: '/login'

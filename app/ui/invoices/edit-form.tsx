@@ -22,6 +22,8 @@ export default function EditInvoiceForm({
   const initialState = { message: null, errors: {} };
   const updateInvoiceWithId = updateInvoice.bind(null, invoice.id);
   const [state, dispatch] = useFormState(updateInvoiceWithId, initialState);
+  // useformstate params = function to be triggered on submit, init
+  // useformstate returns = state of form + ref to passed function, set as <e action={}>
 
   return (
     <form action={dispatch}>

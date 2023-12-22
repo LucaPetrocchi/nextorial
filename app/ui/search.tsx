@@ -18,7 +18,9 @@ export default function Search({ placeholder }: { placeholder: string }) {
       params.delete('query');
     }
     replace(`${pathname}?${params.toString()}`);
-  }, 300);
+  }, 300); // 3 seconds after the user finishes typing, 
+  // defines new params based on content of input
+  // then appends to pathname & replaces current pathname
 
   return (
     <div className="relative flex flex-1 flex-shrink-0">
@@ -32,7 +34,7 @@ export default function Search({ placeholder }: { placeholder: string }) {
           handleSearch(e.target.value);
         }}
         defaultValue={searchParams.get('query')?.toString()}
-      />
+      /> {/* defaultValue uses the current query param; this will work if the user bookmarks a specific search for instance */}
       <MagnifyingGlassIcon className="absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
     </div>
   );

@@ -1,6 +1,6 @@
 import NextAuth from "next-auth";
 import { authConfig } from "./auth.config";
-
+// spreads auth configuration to entire app
 export default NextAuth(authConfig).auth
 
 export const config = {
